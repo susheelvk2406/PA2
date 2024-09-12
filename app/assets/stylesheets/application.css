@@ -1,15 +1,136 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* General button styles (applies to all buttons) */
+.btn {
+  background-color: #28a745;  /* Green background */
+  color: white;               /* White text */
+  font-weight: bold;
+  font-size: 16px;            /* Ensuring font size consistency */
+  border: none;
+  padding: 10px 20px;         /* Consistent padding */
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #218838;  /* Darker green on hover */
+}
+
+/* Danger button for delete action (inherits from .btn) */
+.btn-danger {
+  background-color: #dc3545;  /* Red background for delete button */
+}
+
+.btn-danger:hover {
+  background-color: #c82333;  /* Darker red on hover */
+}
+
+/* Align buttons horizontally */
+.movie-actions {
+  margin-top: 15px;
+}
+
+/* Center the "Back to Movies" link below the buttons */
+.back-link {
+  margin-top: 20px;
+}
+
+.back-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* Style for form inputs, labels, and buttons */
+form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+/* Style for movie details section */
+.movie-details {
+  background-color: #fff;
+  padding: 20px;  /* Increased padding for more space */
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.movie-details h1 {
+  font-size: 30px;  /* Increased font size for the title */
+  color: #333;
+}
+
+.movie-details p {
+  color: #666;
+  font-size: 18px;  /* Increased font size for the details */
+  margin-bottom: 10px;  /* Increased margin for better spacing */
+}
+
+/* Table styling for movies index */
+#movies {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+#movies th, #movies td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+#movies th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+#movies tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Column highlighting for sorting */
+.sorted-asc {
+  background-color: #cce5ff; /* Light blue for ascending sort */
+}
+
+.sorted-desc {
+  background-color: #ffcccc; /* Light red for descending sort */
+}

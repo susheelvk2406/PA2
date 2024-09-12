@@ -6,6 +6,6 @@
 
 <br>
 
-<div>
-  <%= link_to "Back to movies", movies_path %>
+<div class="back-link">
+  <%= link_to 'Back to Movies', movies_path(sort_by: params[:sort_by], direction: params[:direction]), class: "btn" %>
 </div>

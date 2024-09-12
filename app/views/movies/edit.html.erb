@@ -6,7 +6,7 @@
 
 <br>
 
-<div>
-  <%= link_to "Show this movie", @movie %> |
-  <%= link_to "Back to movies", movies_path %>
+<div class="movie-actions">
+  <%= link_to "Show this movie", movie_path(@movie, sort_by: params[:sort_by], direction: params[:direction]), class: "btn" %>
+  <%= link_to 'Back to Movies', movies_path(sort_by: params[:sort_by], direction: params[:direction]), class: "btn" %>
 </div>

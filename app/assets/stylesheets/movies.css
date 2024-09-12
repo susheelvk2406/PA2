@@ -1,0 +1,72 @@
+/* Styling for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Highlight the column by which data is sorted */
+.highlighted {
+  background-color: lightblue;
+  font-weight: bold;
+  color: darkblue;
+}
+
+/* Different background colors based on the sort direction */
+.highlighted.asc {
+  background-color: #cce7ff;  /* Light blue for ascending */
+}
+
+.highlighted.desc {
+  background-color: #ffcccc;  /* Light red for descending */
+}
+
+/* Add hover effects for better interactivity */
+table th a {
+  text-decoration: none;
+  color: black;
+}
+
+table th a:hover {
+  color: #007bff;
+}
+
+/* Styling to make the page distinct and cleaner */
+h1 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Extra styling for links and buttons */
+.add-new-movie {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.add-new-movie:hover {
+  background-color: #218838;
+}

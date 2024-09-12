@@ -1,16 +1,35 @@
-<p style="color: green"><%= notice %></p>
+<h1>All Movies</h1>
 
-<% content_for :title, "Movies" %>
+<table id="movies">
+  <thead>
+    <tr>
+      <th class="<%= @title_sort ? 'highlighted ' + @title_sort : '' %>" id="title_header">
+        <%= link_to "Movie Title #{'▲' if @title_sort == 'asc'}#{'▼' if @title_sort == 'desc'}", movies_path(sort_by: 'title', direction: @title_sort == 'asc' ? 'desc' : 'asc') %>
+      </th>
+      
+      <th class="<%= @rating_sort ? 'highlighted ' + @rating_sort : '' %>" id="rating_header">
+        <%= link_to "Rating #{'▲' if @rating_sort == 'asc'}#{'▼' if @rating_sort == 'desc'}", movies_path(sort_by: 'rating', direction: @rating_sort == 'asc' ? 'desc' : 'asc') %>
+      </th>
+      
+      <th class="<%= @release_sort ? 'highlighted ' + @release_sort : '' %>" id="release_date_header">
+        <%= link_to "Release Date #{'▲' if @release_sort == 'asc'}#{'▼' if @release_sort == 'desc'}", movies_path(sort_by: 'release_date', direction: @release_sort == 'asc' ? 'desc' : 'asc') %>
+      </th>
+      
+      <th>More Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.release_date.present? ? movie.release_date.strftime("%d-%b-%Y") : 'N/A' %></td>
+        <td><%= link_to "More about #{movie.title}", movie_path(movie, sort_by: params[:sort_by], direction: params[:direction]), class: 'btn' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<h1>Movies</h1>
-
-<div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
+<div class="movie-actions">
+  <%= link_to 'Add New Movie', new_movie_path(sort_by: params[:sort_by], direction: params[:direction]), class: "btn" %>
 </div>
-
-<%= link_to "New movie", new_movie_path %>
